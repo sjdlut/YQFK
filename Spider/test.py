@@ -10,7 +10,8 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 chromedriver = "/usr/bin/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromedriver
 driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
-driver.get("https://www.baidu.com")
+#driver.get("https://www.baidu.com")
+driver.get("http://hlcrm.hlcm.cn:8881")
 print(driver.title)
 
 ###########################
@@ -30,7 +31,7 @@ browser.find_element_by_id("txtPassword").send_keys("0625")
 
 # 进行提交-登陆
 browser.find_element_by_class_name("btn btn-primary form-control").click()
-
+browser = driver.get(url)
 # 填写表单
 browser.find_element_by_id("rd_heat_y").send_keys("正常")  # 体温
 browser.find_element_by_id("rd_contact_n").send_keys("无")  # 是否与确诊病例有关联
