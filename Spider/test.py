@@ -4,37 +4,31 @@ from selenium.webdriver.chrome.options import Options
 import time
 import os
 
-driver = webdriver.Chrome()
-# driver.get("https://www.baidu.com/")
-# print(driver.title)
-#
-# driver.quit()
-
-# chrome_options = webdriver.ChromeOptions()
-# chrome_options.add_argument('--headless')
-# chrome_options.add_argument('--no-sandbox')
-# chrome_options.add_argument('--disable-gpu')
-# chrome_options.add_argument('--disable-dev-shm-usage')
-# chromedriver = "/usr/bin/chromedriver"
-# os.environ["webdriver.chrome.driver"] = chromedriver
-# driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
 usr = "1103291"
 pwd = "0625"
-url = "http://hlcrm.hlmc.cn:8881/Login"
-# driver.get(url)
-# print(driver.title)
 
+driver = webdriver.Chrome()
+
+##############################################
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chromedriver = "/usr/bin/chromedriver"
+os.environ["webdriver.chrome.driver"] = chromedriver
+driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
 ###########################
 # 建立一个browser对象
 # 定义登陆的网址
 # 获取变量
 
-driver.get(url)
+driver.get("http://hlcrm.hlmc.cn:8881/Login")
 print(driver.title)
 
 # 找到对应的输入框和登陆按钮
-driver.find_element(By.ID,"txtLoginID").send_keys("1103291")
-driver.find_element(By.ID,"txtPassword").send_keys("0625")
+driver.find_element(By.ID,"txtLoginID").send_keys(usr)
+driver.find_element(By.ID,"txtPassword").send_keys(pwd)
 
 # 进行提交-登陆
 driver.find_element(By.CSS_SELECTOR,"button").click()
