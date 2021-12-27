@@ -4,8 +4,8 @@ from selenium.webdriver.chrome.options import Options
 import time
 import os
 
-usr = "1103291"
-pwd = "0625"
+usr = "1103298"
+pwd = "1009"
 
 ##############################################
 chrome_options = webdriver.ChromeOptions()
