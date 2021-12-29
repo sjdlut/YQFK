@@ -55,7 +55,7 @@ jobs:
            username: ${{ secrets.MAILUSERNAME }}
            password: ${{ secrets.MAILPASSWORD }}
            subject: JiaoYi Report
-           body: ${{ steps.ct.outputs.time } JiaoYi DaCheng, No Neigui!
+           body: ${{ steps.ct.outputs.time }} JiaoYi DaCheng, No Neigui!
            to: ${{ secrets.TO }}
            from: JiJiGuoWang
            content_type: text/plain
