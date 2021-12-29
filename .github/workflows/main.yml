@@ -3,10 +3,10 @@ name: selenium
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  #push:
-    #branches: [ main ]
-  #pull_request:
-    #branches: [ main ]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   schedule:
     - cron: '0 1,21 * * *'
   # Allows you to run this workflow manually from the Actions tab
@@ -37,6 +37,15 @@ jobs:
           sudo cp -p ./chrome/chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
           python ./Spider/test.py
+      - name: 'Current time'
+        id: ct
+        uses: Kaven-Universe/github-action-current-date-time@v1.1.0
+        with:
+          format: "YYYY年MM月DD日 HH:mm:ss.SSS"
+          timezone-offset: -480
+        run: |
+          echo "The time was ${{ steps.ct.outputs.time }}"
+    
       - name: 'Send mail'
         uses: dawidd6/action-send-mail@master
         with:
@@ -45,7 +54,7 @@ jobs:
            username: ${{ secrets.MAILUSERNAME }}
            password: ${{ secrets.MAILPASSWORD }}
            subject: JiaoYi Report
-           body: JiaoYi DaCheng, No Neigui!
+           body: ${{ steps.ct.outputs.time } JiaoYi DaCheng, No Neigui!
            to: ${{ secrets.TO }}
            from: JiJiGuoWang
            content_type: text/plain
