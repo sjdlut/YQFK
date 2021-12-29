@@ -3,10 +3,10 @@ name: selenium
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  #push:
+    #branches: [ main ]
+  #pull_request:
+    #branches: [ main ]
   schedule:
     - cron: '0 1,21 * * *'
   # Allows you to run this workflow manually from the Actions tab
@@ -26,17 +26,17 @@ jobs:
         uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-    #  - name: 'Set up Python'
-    #    uses: actions/setup-python@v1
-    #    with:
-    #      python-version: 3.7
-    #  - name: 'Install requirements'
-    #    run: pip install -r ./Spider/requirements.txt
-    #  - name: 'Working'
-    #    run: |
-    #      sudo cp -p ./chrome/chromedriver /usr/bin/
-    #      chmod -R 777 /usr/bin/chromedriver
-    #      python ./Spider/test.py
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: 'Install requirements'
+        run: pip install -r ./Spider/requirements.txt
+      - name: 'Working'
+        run: |
+          sudo cp -p ./chrome/chromedriver /usr/bin/
+          chmod -R 777 /usr/bin/chromedriver
+          python ./Spider/test.py
       - name: 'Current time'
         id: ct
         uses: Kaven-Universe/github-action-current-date-time@v1.1.0
