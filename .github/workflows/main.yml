@@ -43,6 +43,7 @@ jobs:
         with:
           format: "YYYY年MM月DD日 HH:mm:ss.SSS"
           timezone-offset: -480
+      - name: 'Current time output'
         run: |
           echo "The time was ${{ steps.ct.outputs.time }}"
     
