@@ -68,8 +68,8 @@ def ClockIn(usr,pwd):
 
 if __name__ == '__main__':
 
-    usr = ['1103291','1103298','1095671','1103043'] # sj wfy lsj sys
-    pwd = ['0625'   ,'1009',   '1229'   ,'0316']
+    usr = ['1103291','1103298','1095671','1103043','1103167'] # sj wfy lsj sys jsc
+    pwd = ['0625'   ,'1009'   ,'1229'   ,'0316'   ,'0125']
     for i in range(len(usr)) :
         outprint = ClockIn(usr[i],pwd[i])
         print(outprint)
