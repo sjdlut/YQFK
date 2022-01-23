@@ -3,10 +3,10 @@ name: selenium
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  #push:
-    #branches: [ main ]
-  #pull_request:
-    #branches: [ main ]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   schedule:
     - cron: '0 1,21 * * *'
   # Allows you to run this workflow manually from the Actions tab
@@ -59,3 +59,9 @@ jobs:
            to: ${{ secrets.TO }}
            from: JiJiGuoWang
            content_type: text/plain
+      - name: wechatMassage
+        uses: codelessrun/serverchan-action@v1
+        with:
+           sendKey: ${{ secrets.sendKey }}
+           text: JiaoYi Report
+           desp: JiaoYi DaCheng, No Neigui!
