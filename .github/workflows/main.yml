@@ -41,7 +41,7 @@ jobs:
         id: ct
         uses: Kaven-Universe/github-action-current-date-time@v1.1.0
         with:
-          format: "YYYY年MM月DD日 HH:mm:ss"
+          format: "YYYY年MM月DD日HH:mm:ss"
           timezone-offset: -480
       - name: 'Current time output'
         run: |
