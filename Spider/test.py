@@ -40,6 +40,12 @@ def ClockIn(usr,pwd):
     driver.switch_to.window(driver.window_handles[0])
     
     # 填写表单
+    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[5]/input[1]").click() # 今日健康码颜色
+    time.sleep(1)
+    
+    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[6]/input[2]").click() # 是否涉及防控要求
+    time.sleep(1)
+    
     driver.find_element(By.XPATH,"//*[@id='rd_heat_y']").click() # 体温
     time.sleep(1)
     driver.find_element(By.ID,"rd_contact_n").click()  # 是否与确诊病例有关联
