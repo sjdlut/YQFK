@@ -56,8 +56,8 @@ def ClockIn(usr,pwd):
     time.sleep(1)
     driver.find_element(By.ID,"rd_s_no").click() # 隔离状况 "无需隔离"
     time.sleep(1)
-    driver.find_element(By.XPATH,"//*[@id='fm']/div[30]/input[2]").click() # 被隔离
-    time.sleep(1)
+    #driver.find_element(By.XPATH,"//*[@id='fm']/div[30]/input[2]").click() # 被隔离
+    #time.sleep(1)
     driver.find_element(By.ID,"ckPromise").click()  # 承诺
     time.sleep(1)
     
