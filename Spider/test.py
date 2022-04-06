@@ -40,10 +40,27 @@ def ClockIn(usr,pwd):
     driver.switch_to.window(driver.window_handles[0])
     
     # 填写表单
-    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[5]/input[1]").click() # 今日健康码颜色
+    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[5]/input[1]").click() # 是否已测核酸
+    time.sleep(1)
+    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[6]/input[1]").click() # 检测结果：阴性
+    time.sleep(1)
+    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[6]/input[4]").click() # 检测日期：第一个
     time.sleep(1)
     
-    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[6]/input[2]").click() # 是否涉及防控要求
+    
+    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[8]/input[1]").click() # 今日健康码颜色
+    time.sleep(1)
+    
+    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[9]/input[2]").click() # 今日是否住公司宿舍
+    time.sleep(1)
+    
+    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[10]/input[1]").click() # 今日是否在岗
+    time.sleep(1)
+    
+    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[11]/input[2]").click() # 在岗请选择对应厂别
+    time.sleep(1)
+    
+    driver.find_element(By.ID,"Is_prevention_control").click() # 是否涉及防控要求
     time.sleep(1)
     
     driver.find_element(By.XPATH,"//*[@id='rd_heat_y']").click() # 体温
