@@ -60,7 +60,7 @@ def ClockIn(usr,pwd):
     driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[11]/input[2]").click() # 在岗请选择对应厂别
     time.sleep(1)
     
-    driver.find_element(By.XPATH,"//*[@id='Is_prevention_control']").click()# 是否涉及防控要求
+    driver.find_element(By.XPATH,"/html/body/div[1]/div/div[2]/form/div[13]/input[2]").click()# 是否涉及防控要求
     time.sleep(1)
     
     driver.find_element(By.XPATH,"//*[@id='rd_heat_y']").click() # 体温
